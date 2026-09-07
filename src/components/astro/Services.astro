@@ -1,0 +1,122 @@
+---
+import { services } from '../../data/services';
+import Icon from './Icon.astro';
+---
+
+<section id="services" class="services-section section">
+  <div class="container">
+    <div class="section-heading">
+      <h2 class="section-title">Nos Services</h2>
+      <p class="section-subtitle">Des solutions complètes pour vos projets en Chine</p>
+    </div>
+    <div class="services-grid">
+      {services.map((service) => (
+        <div class="service-card">
+          <div class="service-icon">
+            <Icon name={service.icon} size={40} />
+          </div>
+          <h3 class="service-title">{service.title}</h3>
+          <p class="service-description">{service.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .services-section {
+    background: var(--white);
+  }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .services-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .services-section .section-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+  }
+
+  .services-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; 
+  }
+
+  .service-card {
+    background: var(--white);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    flex: 0 0 100%;         
+    max-width: 350px;      
+  }
+
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    background: var(--primary-lighter);
+  }
+
+  .service-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: var(--primary-gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: transform 0.4s ease;
+  }
+
+  .service-card:hover .service-icon {
+    transform: rotate(10deg) scale(1.05);
+  }
+
+  .service-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--dark);
+  }
+
+  .service-description {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--gray);
+    line-height: 1.6;
+  }
+
+  /* Tablette  */
+  @media (min-width: 768px) {
+    .service-card {
+      flex: 0 0 calc(50% - 15px); 
+      max-width: calc(50% - 15px);
+    }
+  }
+
+  /* Desktop */
+  @media (min-width: 992px) {
+    .service-card {
+      flex: 0 0 calc(33.333% - 20px); 
+      max-width: calc(33.333% - 20px);
+    }
+  }
+</style>

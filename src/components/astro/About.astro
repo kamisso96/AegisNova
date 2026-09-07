@@ -1,0 +1,201 @@
+---
+import { siteConfig } from '../../config';
+---
+
+<section id="apropos" class="about-section section">
+  <div class="container">
+    <div class="about-grid">
+      <!-- Photo du fondateur -->
+      <div class="about-image-wrapper">
+        <img
+          src={siteConfig.aboutImage}
+          alt="Fondateur et CEO d'AegisNova"
+          loading="lazy"
+          width="600"
+          height="750"
+          class="about-image"
+        />
+        <div class="about-image-badge">
+          <span class="badge-name">Fondateur & CEO</span>
+        </div>
+      </div>
+
+      <!-- Texte -->
+      <div class="about-content">
+        <div class="section-heading-left">
+          <h2 class="section-title">À propos de nous</h2>
+          <p class="section-subtitle">Notre mission, notre vision, notre histoire</p>
+        </div>
+
+        <div class="about-text">
+          <h3 class="about-subtitle">Notre Mission</h3>
+          <p>
+            Faciliter la réussite de nos clients en Chine en leur offrant des services
+            de sourcing, de contrôle qualité, de conseil et d’assistance sur mesure.
+          </p>
+
+          <h3 class="about-subtitle">Notre Vision</h3>
+          <p>
+            Devenir le partenaire de référence des entreprises et des particuliers
+            qui souhaitent développer leurs activités ou leurs projets en Chine,
+            en alliant expertise locale et standards internationaux.
+          </p>
+
+          <h3 class="about-subtitle">Notre Histoire</h3>
+          <p>
+            Basée à Haikou, au cœur de la province de Hainan, AegisNova est née de
+            la volonté de créer un pont entre les marchés internationaux et la
+            Chine. Depuis sa création, l’équipe accompagne avec succès des dizaines
+            de clients dans leurs démarches commerciales, académiques et touristiques.
+          </p>
+        </div>
+
+        <div class="about-cta">
+          <a href="#contact" class="about-btn">Discutons de votre projet</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-section {
+    background: var(--white);
+    padding: 80px 0;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+  }
+
+  .about-image-wrapper {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .about-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .about-image-wrapper:hover .about-image {
+    transform: scale(1.02);
+  }
+
+  .about-image-badge {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--primary-gradient);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+  }
+
+  .about-content {
+    padding: 0 10px;
+  }
+
+  .section-heading-left {
+    text-align: center; /* changé pour centrer comme les autres sections */
+    margin-bottom: 30px;
+  }
+
+  /* Titre de section identique aux sections précédentes */
+  .about-section .section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    text-align: center; /* centré */
+  }
+
+  /* Description de section identique aux sections précédentes */
+  .about-section .section-subtitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--gray);
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  .about-subtitle {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 20px;
+    margin-bottom: 8px;
+    text-align: left; /* les sous-titres peuvent rester à gauche */
+  }
+
+  .about-text p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--gray);
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .about-cta {
+    margin-top: 30px;
+    text-align: center; /* centrer le bouton */
+  }
+
+  .about-btn {
+    display: inline-block;
+    padding: 16px 32px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    background: var(--primary-gradient);
+    color: var(--white);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .about-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: var(--dark);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s ease, height 0.5s ease;
+    z-index: -1;
+  }
+
+  .about-btn:hover {
+    color: var(--white);
+  }
+
+  .about-btn:hover::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+    .about-content {
+      padding: 0;
+    }
+  }
+</style>

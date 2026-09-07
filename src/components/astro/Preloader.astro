@@ -1,0 +1,96 @@
+---
+// Préloader : anneaux dorés, disparition après chargement
+---
+
+<div class="preloader" id="preloader" role="status" aria-label="Chargement">
+  <div class="ring ring-1"></div>
+  <div class="ring ring-2"></div>
+  <div class="ring ring-3"></div>
+  <div class="ring ring-4"></div>
+</div>
+
+<style>
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: var(--primary);
+    border-bottom-color: var(--primary-dark);
+    animation: spin 1.2s linear infinite;
+  }
+
+  .ring-1 {
+    width: 60px;
+    height: 60px;
+    animation-duration: 1.2s;
+  }
+
+  .ring-2 {
+    width: 90px;
+    height: 90px;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+    border-top-color: var(--secondary);
+    border-bottom-color: var(--secondary-light);
+  }
+
+  .ring-3 {
+    width: 120px;
+    height: 120px;
+    animation-duration: 1.8s;
+    border-top-color: var(--accent);
+    border-bottom-color: var(--primary-light);
+  }
+
+  .ring-4 {
+    width: 150px;
+    height: 150px;
+    animation-duration: 2.1s;
+    animation-direction: reverse;
+    border-top-color: var(--secondary-light);
+    border-bottom-color: var(--light);
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+</style>
+
+<script>
+  const preloader = document.getElementById('preloader');
+  window.addEventListener('load', () => {
+    // Petit délai pour laisser l'animation se terminer
+    setTimeout(() => {
+      preloader?.classList.add('hidden');
+    }, 500);
+
+    // Suppression du DOM après la transition
+    setTimeout(() => {
+      preloader?.remove();
+    }, 1500);
+  });
+</script>

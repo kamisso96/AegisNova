@@ -1,0 +1,82 @@
+:root {
+  --primary: #F2BEA1;
+  --primary-light: #F5CDB8;
+  --primary-lighter: #FAEBE3;
+  --primary-dark: #E7AE93;
+  --primary-gradient: linear-gradient(135deg, #F2BEA1, #E7AE93, #D9AFA9, #AE8187);
+
+  --secondary: #AE8187;
+  --secondary-light: #C39B9B;
+  --accent: #E7AE93;
+
+  --light: #FAEBE3;
+  --lighter: #FFFFFF;
+
+  --dark: #292727;
+  --darker: #000000;
+
+  --gray: #6F6869;
+  --gray-light: #A9A2A3;
+
+  --white: #FFFFFF;
+  --black: #000000;
+
+  --shadow-sm: 0 4px 6px -1px rgba(174,129,135,.08), 0 2px 4px -1px rgba(0,0,0,.04);
+  --shadow-md: 0 10px 15px -3px rgba(174,129,135,.10), 0 4px 6px -2px rgba(0,0,0,.05);
+  --shadow-lg: 0 20px 25px -5px rgba(174,129,135,.12), 0 10px 10px -5px rgba(0,0,0,.05);
+  --shadow-xl: 0 25px 50px -12px rgba(174,129,135,.20);
+
+  --font-body: 'Poppins', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--dark);
+  background-color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 50px 0;
+  }
+}

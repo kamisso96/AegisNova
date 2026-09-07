@@ -1,0 +1,280 @@
+---
+// Header fixe avec menu responsive
+import { siteConfig } from '../../config';
+---
+
+<header class="header" id="header">
+  <div class="container header-inner">
+    <!-- Logo avec texte -->
+    <a href="/" class="logo" aria-label="Aegis Nova - Retour à l'accueil">
+      <img src="/images/logo/logo.png" alt={`${siteConfig.name} logo`} width="40" height="40" />
+      <span class="logo-text">Aegis Nova</span>
+    </a>
+
+    <!-- Navigation desktop -->
+    <nav class="nav-desktop" aria-label="Navigation principale">
+      <ul class="nav-list">
+        <li><a href="#accueil" class="nav-link active">Accueil</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#realisations" class="nav-link">Réalisations</a></li>
+        <li><a href="#apropos" class="nav-link">À propos</a></li>
+        <li><a href="#temoignages" class="nav-link">Témoignages</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Bouton hamburger mobile -->
+    <button class="hamburger" id="hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+
+  <!-- Menu mobile -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul class="mobile-nav-list">
+      <li><a href="#accueil" class="mobile-nav-link">Accueil</a></li>
+      <li><a href="#services" class="mobile-nav-link">Services</a></li>
+      <li><a href="#realisations" class="mobile-nav-link">Réalisations</a></li>
+      <li><a href="#apropos" class="mobile-nav-link">À propos</a></li>
+      <li><a href="#temoignages" class="mobile-nav-link">Témoignages</a></li>
+      <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: box-shadow 0.3s ease;
+  }
+
+  .header.scrolled {
+    box-shadow: var(--shadow-md);
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px; /* augmenté de 80px pour plus d'espace */
+  }
+
+  /* Logo avec texte */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 1.9rem;   /* taille augmentée */
+    font-weight: 700;
+    color: var(--dark);
+    white-space: nowrap;
+    letter-spacing: 0.5px;
+  }
+
+  /* Navigation desktop */
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.1rem;   /* taille augmentée */
+    color: var(--dark);
+    transition: color 0.3s ease;
+    padding-bottom: 5px;
+    text-decoration: none;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover,
+  .nav-link.active {
+    color: var(--primary-dark);
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Hamburger */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .bar {
+    width: 25px;
+    height: 2px;
+    background: var(--dark);
+    transition: all 0.3s ease;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Menu mobile */
+  .mobile-menu {
+    position: absolute;
+    top: 90px; /* ajusté pour correspondre à la hauteur du header */
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    box-shadow: var(--shadow-md);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .mobile-menu.open {
+    max-height: 400px;
+  }
+
+  .mobile-nav-list {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+  }
+
+  .mobile-nav-link {
+    padding: 12px 20px;
+    font-weight: 500;
+    font-size: 1.1rem;   /* taille augmentée */
+    color: var(--dark);
+    transition: background 0.3s ease;
+    text-decoration: none;
+  }
+
+  .mobile-nav-link:hover {
+    background: var(--primary-lighter);
+    color: var(--primary-dark);
+  }
+
+  /* Responsive */
+  @media (min-width: 992px) {
+    .nav-desktop {
+      display: block;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+  }
+
+  /* Ajustement pour mobile si nécessaire */
+  @media (max-width: 576px) {
+    .logo-text {
+      font-size: 1.5rem;   /* taille réduite mais toujours plus grande qu'avant */
+    }
+    .logo img {
+      height: 32px;
+    }
+    .header-inner {
+      height: 80px;   /* éventuellement réduire la hauteur sur mobile */
+    }
+    .mobile-menu {
+      top: 80px;   /* ajuster aussi */
+    }
+  }
+</style>
+
+<script>
+  const header = document.getElementById('header')!;
+  const hamburger = document.getElementById('hamburger')!;
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  // Changement d'ombre au scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+
+    // Détection de la section active
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = (section as HTMLElement).offsetTop - 120; // ajusté pour compenser la hauteur
+      if (window.scrollY >= sectionTop) {
+        current = section.getAttribute('id') ?? '';
+      }
+    });
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${current}`) {
+        link.classList.add('active');
+      }
+    });
+  });
+
+  // Toggle menu mobile
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mobileMenu?.classList.toggle('open');
+    const expanded = hamburger.getAttribute('aria-expanded') === 'true' ? 'false' : 'true';
+    hamburger.setAttribute('aria-expanded', expanded);
+  });
+
+  // Fermer le menu mobile après clic sur un lien
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('active');
+      mobileMenu?.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

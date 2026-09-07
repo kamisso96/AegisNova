@@ -1,0 +1,143 @@
+---
+import { siteConfig } from '../../config';
+import Icon from './Icon.astro';
+
+const hours = siteConfig.hours;
+const hoursArray = typeof hours === 'string'
+  ? [hours]
+  : [hours.weekdays, hours.saturday, hours.sunday].filter(Boolean);
+---
+
+<div class="contact-info-card">
+  <h3 class="contact-info-title">AEFISNOVA CO., LTD.</h3>
+  <ul class="contact-info-list">
+    <li>
+      <span class="contact-info-icon">
+        <Icon name="map-pin" size={28} />
+      </span>
+      {siteConfig.address}
+    </li>
+    <li>
+      <span class="contact-info-icon">
+        <Icon name="phone" size={28} />
+      </span>
+      {siteConfig.phone}
+    </li>
+    <li>
+      <span class="contact-info-icon">
+        <Icon name="mail" size={28} />
+      </span>
+      {siteConfig.email}
+    </li>
+    <li class="hours-item">
+      <span class="contact-info-icon">
+        <Icon name="clock" size={28} />
+      </span>
+      <span class="hours-text">
+        {hoursArray.map((line) => (
+          <span class="hour-line">{line}</span>
+        ))}
+      </span>
+    </li>
+  </ul>
+  <div class="contact-info-social">
+    <a href={siteConfig.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <Icon name="tiktok" size={28} />
+    </a>
+    <a href={siteConfig.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <Icon name="facebook" size={28} />
+    </a>
+    <a href={siteConfig.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <Icon name="instagram" size={28} />
+    </a>
+    <a href={siteConfig.social.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+      <Icon name="whatsapp" size={28} />
+    </a>
+  </div>
+</div>
+
+<style>
+  .contact-info-card {
+    background: var(--primary-gradient);
+    color: var(--white);
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: var(--shadow-xl);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .contact-info-title {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .contact-info-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+
+  .contact-info-list li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .hours-item {
+    align-items: flex-start;
+  }
+
+  .contact-info-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hours-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hour-line {
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  .contact-info-social {
+    display: flex;
+    gap: 18px;
+    margin-top: auto;
+  }
+
+  .contact-info-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    transition: background 0.3s ease, transform 0.6s ease;
+  }
+
+  .contact-info-social a:hover {
+    background: var(--dark);
+    transform: rotate(360deg);
+  }
+</style>

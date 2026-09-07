@@ -1,11 +1,23 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSlider from '../components/react/HeroSlider.jsx';
+import Services from '../components/astro/Services.astro';
+import RealisationsCarousel from '../components/react/RealisationsCarousel.jsx';
+import WhyUs from '../components/astro/WhyUs.astro';
+import TestimonialsCarousel from '../components/react/TestimonialsCarousel.jsx';
+import About from '../components/astro/About.astro';
+import StatsCounter from '../components/react/StatsCounter.jsx';
+import ContactSection from '../components/astro/ContactSection.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="AegisNova - Accueil" description="Site vitrine AegisNova">
+  <HeroSlider client:load />
+  <Services />
+  <RealisationsCarousel client:visible />
+  <WhyUs />
+  <TestimonialsCarousel client:visible />
+  <About />
+  <StatsCounter client:visible />
+  <ContactSection />
+  <!-- Autres sections à venir -->
+</BaseLayout>
