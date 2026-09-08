@@ -144,10 +144,10 @@ export default function TestimonialForm({ onClose }) {
         </button>
 
         {status === 'success' && (
-          <p className="form-message success">Merci ! Votre témoignage a été envoyé.</p>
+          <p className="form-message success" role="status" aria-live="polite">Merci ! Votre témoignage a été envoyé.</p>
         )}
         {status === 'error' && (
-          <p className="form-message error">Une erreur est survenue. Réessayez plus tard.</p>
+          <p className="form-message error" role="alert" aria-live="assertive">Une erreur est survenue. Réessayez plus tard.</p>
         )}
       </form>
     </div>

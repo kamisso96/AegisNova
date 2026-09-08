@@ -148,10 +148,10 @@ export default function ContactForm() {
           {status === 'sending' ? 'Envoi en cours...' : 'Envoyer le message'}
         </button>
         {status === 'success' && (
-          <p className="form-message success">Merci ! Votre message a bien été envoyé.</p>
+          <p className="form-message success" role="status" aria-live="polite">Merci ! Votre message a bien été envoyé.</p>
         )}
         {status === 'error' && (
-          <p className="form-message error">Une erreur est survenue. Veuillez réessayer.</p>
+          <p className="form-message error" role="alert" aria-live="assertive">Une erreur est survenue. Veuillez réessayer.</p>
         )}
       </form>
     </div>
