@@ -10,13 +10,32 @@ export default function TestimonialForm({ onClose }) {
     image: '',
   });
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [honeypot, setHoneypot] = useState('');
+  const [formLoadTime] = useState(Date.now());
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleHoneypotChange = (e) => {
+    setHoneypot(e.target.value);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Vérification du honeypot
+    if (honeypot) {
+      setStatus('error');
+      return;
+    }
+
+    // Délai minimum : 3 secondes après chargement du formulaire
+    if (Date.now() - formLoadTime < 3000) {
+      setStatus('error');
+      return;
+    }
+
     setStatus('sending');
 
     try {
@@ -29,6 +48,7 @@ export default function TestimonialForm({ onClose }) {
       if (response.ok) {
         setStatus('success');
         setFormData({ name: '', role: '', text: '', image: '' });
+        setHoneypot('');
       } else {
         setStatus('error');
       }
@@ -51,6 +71,18 @@ export default function TestimonialForm({ onClose }) {
 
       <form onSubmit={handleSubmit} className="testimonial-form">
         <h3>Partagez votre expérience</h3>
+
+        {/* Champ honeypot caché */}
+        <input
+          type="text"
+          name="_gotcha"
+          value={honeypot}
+          onChange={handleHoneypotChange}
+          style={{ display: 'none' }}
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+        />
 
         <div className="form-group">
           <label htmlFor="testimonial-name">Nom complet</label>

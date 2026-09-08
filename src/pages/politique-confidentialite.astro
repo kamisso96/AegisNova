@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Politique de confidentialité - AegisNova"
+  description="Politique de confidentialité du site AegisNova"
+>
+  <div class="legal-page">
+    <div class="container">
+      <h1 class="legal-title">Politique de confidentialité</h1>
+      <p class="legal-date">Dernière mise à jour : {new Date().getFullYear()}</p>
+
+      <section class="legal-section">
+        <h2>Collecte des informations</h2>
+        <p>
+          Nous collectons les informations que vous nous fournissez via nos
+          formulaires de contact et de témoignage : nom, email, téléphone,
+          message, ainsi que les données que vous acceptez de partager.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Utilisation des données</h2>
+        <p>
+          Les données collectées servent uniquement à répondre à vos demandes,
+          améliorer nos services et vous contacter si nécessaire. Elles ne sont
+          jamais vendues à des tiers.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Conservation des données</h2>
+        <p>
+          Les données sont conservées pendant la durée nécessaire au traitement
+          de votre demande, puis supprimées, sauf obligation légale de
+          conservation.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Vos droits</h2>
+        <p>
+          Conformément à la réglementation applicable, vous disposez d’un droit
+          d’accès, de rectification, d’opposition et de suppression de vos
+          données personnelles. Pour exercer ces droits, écrivez-nous à
+          aegisnovanet@gmail.com.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Cookies</h2>
+        <p>
+          Ce site n’utilise pas de cookies de suivi publicitaire. Seuls des
+          cookies techniques peuvent être utilisés pour le bon fonctionnement du
+          site.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: 120px 0 80px;
+    background: var(--white);
+  }
+
+  .legal-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .legal-date {
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .legal-section {
+    margin-bottom: 30px;
+  }
+
+  .legal-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  .legal-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .legal-title {
+      font-size: 2rem;
+    }
+  }
+</style>

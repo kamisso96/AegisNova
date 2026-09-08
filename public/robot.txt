@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.aegisnova.com/sitemap-index.xml

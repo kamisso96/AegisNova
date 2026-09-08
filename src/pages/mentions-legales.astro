@@ -1,0 +1,108 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Mentions légales - AegisNova"
+  description="Mentions légales du site AegisNova"
+>
+  <div class="legal-page">
+    <div class="container">
+      <h1 class="legal-title">Mentions légales</h1>
+      <p class="legal-date">Dernière mise à jour : {new Date().getFullYear()}</p>
+
+      <section class="legal-section">
+        <h2>Éditeur du site</h2>
+        <p>
+          Le site <strong>AegisNova</strong> est édité par Aegis Nova Co., Ltd.,
+          dont le siège social est situé à Haikou, Hainan, Chine.
+        </p>
+        <p>
+          Téléphone : +86 178 5818 0592<br />
+          Email : aegisnovanet@gmail.com
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Directeur de la publication</h2>
+        <p>Le directeur de la publication est le fondateur et CEO d’AegisNova.</p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Hébergement</h2>
+        <p>
+          Le site est hébergé par Vercel Inc., situé 340 S Lemon Ave #4133,
+          Walnut, CA 91789, États-Unis.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Propriété intellectuelle</h2>
+        <p>
+          L’ensemble des contenus (textes, images, logos, graphismes) présents
+          sur ce site est protégé par les lois en vigueur sur la propriété
+          intellectuelle. Toute reproduction, représentation, modification ou
+          adaptation, totale ou partielle, est interdite sans autorisation
+          préalable.
+        </p>
+      </section>
+
+      <section class="legal-section">
+        <h2>Données personnelles</h2>
+        <p>
+          Les informations collectées via les formulaires sont utilisées
+          uniquement pour répondre aux demandes des utilisateurs. Conformément
+          au Règlement Général sur la Protection des Données (RGPD), vous
+          disposez d’un droit d’accès, de rectification et de suppression de
+          vos données. Pour l'exercer, contactez-nous à aegisnovanet@gmail.com.
+        </p>
+      </section>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .legal-page {
+    padding: 120px 0 80px;
+    background: var(--white);
+  }
+
+  .legal-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+
+  .legal-date {
+    color: var(--gray);
+    margin-bottom: 40px;
+    font-weight: 500;
+  }
+
+  .legal-section {
+    margin-bottom: 30px;
+  }
+
+  .legal-section h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+  }
+
+  .legal-section p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--gray);
+    margin-bottom: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .legal-title {
+      font-size: 2rem;
+    }
+  }
+</style>

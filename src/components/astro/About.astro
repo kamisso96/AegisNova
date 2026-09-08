@@ -11,6 +11,7 @@ import { siteConfig } from '../../config';
           src={siteConfig.aboutImage}
           alt="Fondateur et CEO d'AegisNova"
           loading="lazy"
+          decoding="async"
           width="600"
           height="750"
           class="about-image"
@@ -106,11 +107,10 @@ import { siteConfig } from '../../config';
   }
 
   .section-heading-left {
-    text-align: center; /* changé pour centrer comme les autres sections */
+    text-align: center;
     margin-bottom: 30px;
   }
 
-  /* Titre de section identique aux sections précédentes */
   .about-section .section-title {
     font-size: 3rem;
     font-weight: 700;
@@ -118,10 +118,9 @@ import { siteConfig } from '../../config';
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 10px;
-    text-align: center; /* centré */
+    text-align: center;
   }
 
-  /* Description de section identique aux sections précédentes */
   .about-section .section-subtitle {
     font-size: 1.4rem;
     font-weight: 700;
@@ -136,7 +135,7 @@ import { siteConfig } from '../../config';
     color: var(--primary-dark);
     margin-top: 20px;
     margin-bottom: 8px;
-    text-align: left; /* les sous-titres peuvent rester à gauche */
+    text-align: left;
   }
 
   .about-text p {
@@ -149,7 +148,7 @@ import { siteConfig } from '../../config';
 
   .about-cta {
     margin-top: 30px;
-    text-align: center; /* centrer le bouton */
+    text-align: center;
   }
 
   .about-btn {

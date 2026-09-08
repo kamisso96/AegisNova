@@ -24,10 +24,15 @@ export default function HeroSlider() {
       >
         {siteConfig.heroImages.map((image, index) => (
           <SwiperSlide key={index}>
-            <div
-              className="hero-slide"
-              style={{ backgroundImage: `url(${image})` }}
-            >
+            <div className="hero-slide">
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                className="hero-image"
+                fetchpriority={index === 0 ? "high" : "auto"}
+                loading={index === 0 ? "eager" : "lazy"}
+                decoding="async"
+              />
               <div className="hero-overlay"></div>
               <div className="hero-content">
                 <h1 className="hero-title">

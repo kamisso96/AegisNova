@@ -19,10 +19,10 @@ export const siteConfig = {
     whatsapp: "https://wa.me/8617858180592",
   },
   heroImages: [
-    "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1200&q=50&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=50&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=1200&q=50&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1200&q=50&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1583996829982-823143cc975a?w=1200&q=50&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=1200&q=50&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1632377082567-6ebc57584867?w=1200&q=50&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1712490142969-386da61558d5?w=1200&q=50&auto=format&fit=crop",
   ],
   aboutImage:
     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=50&auto=format&fit=crop",

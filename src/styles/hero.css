@@ -14,11 +14,20 @@
   position: relative;
   height: 100vh;
   min-height: 600px;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Nouvelle classe pour l'image de fond optimisée */
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .hero-overlay {
@@ -39,14 +48,14 @@
   position: relative;
   z-index: 2;
   text-align: center;
-  max-width: 900px; /* légèrement élargi pour les grandes tailles */
+  max-width: 900px;
   padding: 0 20px;
   color: var(--white);
 }
 
 .hero-title {
-  font-size: 3.8rem;   /* augmenté (anciennement 3rem) */
-  font-weight: 700;     /* déjà en gras, conservé */
+  font-size: 3.8rem;
+  font-weight: 700;
   margin-bottom: 20px;
   line-height: 1.2;
   animation: fadeInUp 1s ease;
@@ -61,8 +70,8 @@
 }
 
 .hero-description {
-  font-size: 1.5rem;    /* augmenté (anciennement 1.2rem) */
-  font-weight: 700;     /* mis en gras */
+  font-size: 1.5rem;
+  font-weight: 700;
   margin-bottom: 30px;
   color: var(--light);
   animation: fadeInUp 1s ease 0.2s both;
@@ -78,10 +87,10 @@
 
 .hero-btn {
   display: inline-block;
-  padding: 16px 32px;   /* légèrement augmenté */
+  padding: 16px 32px;
   border-radius: 30px;
-  font-weight: 700;     /* boutons en gras */
-  font-size: 1.1rem;    /* taille de police augmentée */
+  font-weight: 700;
+  font-size: 1.1rem;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -157,10 +166,10 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.6rem;   /* ajusté pour mobile */
+    font-size: 2.6rem;
   }
   .hero-description {
-    font-size: 1.2rem;   /* ajusté pour mobile */
+    font-size: 1.2rem;
   }
   .hero-btn {
     padding: 12px 22px;

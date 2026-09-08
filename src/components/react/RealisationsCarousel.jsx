@@ -17,9 +17,12 @@ export default function RealisationsCarousel() {
       <Swiper
         modules={[Autoplay, Pagination, Keyboard, A11y]}
         slidesPerView={1}
-        spaceBetween={20}
+        spaceBetween={30}
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{
+          delay: 4000,
+          disableOnInteraction: false,
+        }}
         pagination={{ clickable: true }}
         keyboard={{ enabled: true }}
         a11y={{ enabled: true }}
@@ -37,6 +40,7 @@ export default function RealisationsCarousel() {
                   src={item.image}
                   alt={item.title}
                   loading="lazy"
+                  decoding="async"
                   width="600"
                   height="400"
                 />

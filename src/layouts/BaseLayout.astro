@@ -34,6 +34,19 @@ const { title = 'AegisNova', description = 'Site vitrine AegisNova' } = Astro.pr
       media="print"
       onload="this.media='all'"
     />
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.url} />
+    <meta property="og:image" content="/images/og-image.jpg" />
+    <meta property="og:site_name" content="AegisNova" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/og-image.jpg" />
   </head>
   <body>
     <Preloader />
