@@ -9,6 +9,7 @@ import Preloader from '../components/astro/Preloader.astro';
 import Header from '../components/astro/Header.astro';
 import Footer from '../components/astro/Footer.astro';
 import BackToTop from '../components/astro/BackToTop.astro';
+import Analytics from '../components/astro/Analytics.astro';
 
 interface Props {
   title?: string;
@@ -47,6 +48,13 @@ const { title = 'AegisNova', description = 'Site vitrine AegisNova' } = Astro.pr
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/images/og-image.jpg" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#F2BEA1" />
+
+    <!-- Analytics -->
+    <Analytics />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Aller au contenu principal</a>
@@ -57,5 +65,14 @@ const { title = 'AegisNova', description = 'Site vitrine AegisNova' } = Astro.pr
     </main>
     <Footer />
     <BackToTop />
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(() => console.log('Service Worker enregistré'))
+            .catch((err) => console.error('Erreur SW :', err));
+        });
+      }
+    </script>
   </body>
 </html>

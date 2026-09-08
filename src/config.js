@@ -26,4 +26,8 @@ export const siteConfig = {
   ],
   aboutImage:
     "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=50&auto=format&fit=crop",
+  analytics: {
+    plausible: "https://plausible.io/js/script.js",
+    domain: "aegisnova.com",
+  },
 };

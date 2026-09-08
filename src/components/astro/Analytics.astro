@@ -1,0 +1,7 @@
+---
+import { siteConfig } from '../../config';
+---
+
+{siteConfig.analytics?.plausible && siteConfig.analytics?.domain && (
+  <script defer data-domain={siteConfig.analytics.domain} src={siteConfig.analytics.plausible}></script>
+)}
